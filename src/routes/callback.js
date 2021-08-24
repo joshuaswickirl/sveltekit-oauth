@@ -6,8 +6,12 @@ export async function get(request) {
   const callbackCode = request.query.get("code");
   const accessToken = await getAccessToken(callbackCode);
   const user = await getUser(accessToken);
+  request.locals.user = user.login;
   return {
-    body: JSON.stringify(user, null, 2),
+    status: 302,
+    headers: {
+      location: "/",
+    },
   };
 }
 
