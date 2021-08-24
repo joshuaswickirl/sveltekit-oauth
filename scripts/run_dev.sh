@@ -2,4 +2,4 @@
 
 export INSTANCE=DEVELOPMENT
 
-npm run dev -- --open
+npm run dev

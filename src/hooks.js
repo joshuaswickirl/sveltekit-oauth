@@ -1,8 +1,12 @@
 import cookie from "cookie";
 
 export async function handle({ request, resolve }) {
-  const cookies = cookie.parse(request.headers.cookie || { user: null });
-  request.locals.user = cookies.user;
+  const cookies = cookie.parse(request.headers.cookie);
+  if (cookies.user === ""){
+    request.locals.user = null
+  } else {
+    request.locals.user = cookies.user;
+  }
 
   const response = await resolve(request);
 

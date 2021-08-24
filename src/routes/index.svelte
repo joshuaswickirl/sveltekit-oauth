@@ -12,12 +12,14 @@
   export let user;
 </script>
 
-<h1>Welcome to SvelteKit Auth</h1>
+<h1>SvelteKit Auth</h1>
 <p>
-  Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
+  Try to visit the <a href="/restricted">restricted</a> page.
 </p>
+
 {#if user}
   <h2>Welcome {user}</h2>
+  <br />
   <a href="/logout">
     <button>Logout</button>
   </a>
@@ -26,3 +28,9 @@
     <button>Login using GitHub</button>
   </a>
 {/if}
+
+<style>
+  .error {
+    color: red;
+  }
+</style>
