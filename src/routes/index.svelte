@@ -28,9 +28,3 @@
     <button>Login using GitHub</button>
   </a>
 {/if}
-
-<style>
-  .error {
-    color: red;
-  }
-</style>

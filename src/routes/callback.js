@@ -3,6 +3,7 @@ import { getEnvVars } from "$lib/envVars";
 const envVars = getEnvVars();
 
 export async function get(request) {
+  // compare state param to authorizeState store in local memory
   const callbackCode = request.query.get("code");
   const accessToken = await getAccessToken(callbackCode);
   const user = await getUser(accessToken);
